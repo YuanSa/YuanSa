@@ -1,0 +1,168 @@
+{
+    "personal": {
+        "name": "杨子涵",
+        "email": "yang.zihan@columbia.edu",
+        "phone": ["+1(646)919-3375", "+86 184 2809 6715"],
+        "address": "354 Cathedral Parkway, New York, NY 10025"
+    },
+    "links": [
+        { "icon": "linkedin", "url": "http://www.linkedin.com/in/yangzihan1998" },
+        { "icon": "youtube", "url": "" },
+        { "icon": "weibo", "url": "" }
+    ],
+    "experience": [
+        {
+            "title": "教育经历",
+            "contents": [
+                {
+                    "name": "哥伦比亚大学",
+                    "position": "美国 纽约",
+                    "dateFrom": "2019年9月",
+                    "dataTill": "2020年10月",
+                    "detail": [
+                        "电气工程 硕士（Master of Science in Electrical Engineering）GPA: 3.5/4.0",
+                        "主要课程：前端、算法、物联网、人工智能、大数据、区块链、5G、量子计算等"
+                    ]
+                },
+                {
+                    "name": "电子科技大学",
+                    "position": "中国 成都",
+                    "dateFrom": "2015年9月",
+                    "dataTill": "2019年7月",
+                    "detail": [
+                        "光电信息科学与工程 工学 学士 GPA: 3.8/4.0",
+                        "获 人民一等奖学金、人民二等奖学金 等多次奖学金"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "技能",
+            "contents": [
+                "掌握语言：HTML5/CSS3, JavaScript, SQL, Python, Java, PHP, C, Matlab, VHDL, Verilog",
+                "技能工具：Vue, Django, MySQL, DynamoDB, Highchart, Git, Matlab, Photoshop, Premiere Pro, LaTeX 等"
+            ]
+        },
+        {
+            "title": "实践项目",
+            "contents": [
+                {
+                    "name": "在线教育应用：电子科技大学在线评教系统",
+                    "dateFrom": "2018年6月",
+                    "dataTill": "2019年6月",
+                    "detail": [
+                        "设计并实现了评教系统，解决了大学选课难的问题。",
+                        "使用 IIS、PHP、云 MySQL 在 CVM 上搭建服务器，实现了用户自定义评分权重、个性化课程、教师推荐等功能。"
+                    ],
+                    "link": [
+                        { "text": "Demo", "icon": "link", "url": "", "default": true },
+                        { "text": "GitHub", "icon": "github", "url": "" }
+                    ]
+                },
+                {
+                    "name": "IoT应用：自动补货及余量监控系统",
+                    "dateFrom": "2020年3月",
+                    "dataTill": "2020年5月",
+                    "detail": [
+                        "设计物联网系统，监测物品重量变化，预测耗尽时间，发送耗尽预警，提供数据展示。",
+                        "使用 Django 操作 AWS DynamoDB 记录变化，并使用线性回归预测物品耗尽时间",
+                        "在耗尽前一段时间，通过 AWS SNS 服务向用户发送电子邮件提醒其及时补货",
+                        "使用 Django 与 Highchart 制作 Dashboard 展示物品余量变化情况与预测耗尽时间"
+                    ],
+                    "link": [
+                        { "text": "Demo", "icon": "link", "url": "", "default": true },
+                        { "text": "GitHub", "icon": "github", "url": "" }
+                    ]
+                },
+                {
+                    "name": "大数据分析：英雄联盟角色推荐系统",
+                    "dateFrom": "2019年10月",
+                    "dataTill": "2019年12月",
+                    "detail": [
+                        "使用过往游戏数据训练模型，根据当前BP情况，推荐下一个（组）最佳BP英雄",
+                        "提出了 CCM 推荐算法，通过多场游戏数据训练得到推荐模型，通过模型做出阵容推荐。",
+                        "使用 HTML/CSS/JS, PHP, Python 在服务器实现了 Demo 展示"
+                    ],
+                    "link": [
+                        { "text": "Demo", "icon": "link", "url": "", "default": true },
+                        { "text": "GitHub", "icon": "github", "url": "" }
+                    ]
+                },
+                {
+                    "name": "本科 IoT 毕业设计：远程室内温湿度监测系统",
+                    "dateFrom": "2018年12月",
+                    "dataTill": "2019年6月",
+                    "detail": [
+                        "使用 C 语言，通过 STM32 芯片、SHT20 传感器模块、ESP8266 Wi-Fi 模块和 OLED 模块搭建了软硬件系统。",
+                        "使用HTML/CSS/JS/Highchart在网页端和微信小程序端 实现了远程、实时数据监测，及历史数据统计、展示功能。"
+                    ],
+                    "link": [
+                        { "text": "Demo", "icon": "link", "url": "", "default": true },
+                        { "text": "GitHub", "icon": "github", "url": "" }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "个人小游戏",
+            "contents": [
+                {
+                    "detail": "成语接龙：基于 Vue 的成语接龙游戏",
+                    "link": [
+                        { "text": "Demo", "icon": "link", "url": "", "default": true },
+                        { "text": "GitHub", "icon": "github", "url": "" }
+                    ]
+                },
+                {
+                    "detail": "Color Puzzle：色彩解谜游戏——交换色块，还原渐变",
+                    "link": [
+                        { "text": "Demo", "icon": "link", "url": "", "default": true },
+                        { "text": "GitHub", "icon": "github", "url": "" }
+                    ]
+                },
+                {
+                    "detail": "Music Now! 表白神器：点击音乐表白游戏——持续点击以维持播放，输入口令216触发彩蛋",
+                    "link": [
+                        { "text": "Demo", "icon": "link", "url": "", "default": true },
+                        { "text": "GitHub", "icon": "github", "url": "" }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "课外活动",
+            "contents": [
+                {
+                    "name": "哔哩哔哩视频网UP主",
+                    "dateFrom": "至今",
+                    "detail": [
+                        "自学前端、PS、PR、排版等技能，制作视频教程，发布于哔哩哔哩视频网和 YouTube 等视频网站。",
+                        "各平台获得 1.5 万粉丝，90万次播放，截至 2020 年 7 月 20 日盈利人民币 2000 余元。"
+                    ],
+                    "link": [{ "url": "", "default": true }]
+                },
+                {
+                    "name": "电子科技大学光电信息学院新闻中心部长",
+                    "dateFrom": "2016年9月",
+                    "dataTill": "2017年9月",
+                    "detail": [
+                        "管理学院微信公众号，主攻视频制作和视觉设计",
+                        "改革内容生产模式，带领团队取得了校十佳新媒体大赛第二名，获得学院分团委“优秀部长”称号"
+                    ],
+                    "link": [{ "url": "", "default": true }]
+                },
+                {
+                    "name": "新加坡国立大学创新管理项目",
+                    "position": "新加坡",
+                    "dateFrom": "2017年7月",
+                    "detail": [
+                        "调查环球影城商业模式并提出改进建议",
+                        "所在团队表现优异，获得了最佳小队称号",
+                        "获得新国大工程学院执行董事 Hang Chang Chieh 推荐信"
+                    ],
+                    "link": [{ "url": "", "default": true }]
+                }
+            ]
+        }
+    ]
+}

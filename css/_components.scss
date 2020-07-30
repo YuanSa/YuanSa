@@ -4,7 +4,6 @@ h1 {
     margin: 0;
     text-align: center;
 }
-
 h2 {
     margin: 0;
     padding: 0.2em $inner-padding;
@@ -12,6 +11,9 @@ h2 {
     border-bottom-style: solid;
     border-width: thin;
     border-color: #ccc;
+}
+p {
+    margin: 0;
 }
 
 .image {
@@ -59,14 +61,35 @@ h2 {
 
     .item {
         display: grid;
-        margin-bottom: 1em;
-        padding: 0 $inner-padding;
+        padding: 0.5em $inner-padding;
         width: 100%;
+
+        * {
+            align-self: center;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .subtitle {
+            color: #999;
+            font-size: 0.75em;
+            font-weight: lighter;
+        }
 
         .location,
         .date {
             justify-self: end;
             text-align: right;
+        }
+
+        .detail {
+            padding: 0 1em;
+        }
+
+        &:hover {
+            background-color: #eee;
         }
     }
 
@@ -79,33 +102,26 @@ h2 {
     .title {
         grid-area: 1 / 1 / 2 / 2;
     }
-
     .subtitle {
         grid-area: 2 / 1 / 3 / 2;
     }
-
     .location {
         grid-area: 1 / 2 / 2 / 3;
     }
-
     .date {
         grid-area: 2 / 2 / 3 / 3;
     }
-
     .detail {
         grid-area: 3 / 1 / 4 / 3;
     }
 }
-
 .item_normal {
     .title {
         grid-area: 1 / 1 / 2 / 2;
     }
-
     .date {
         grid-area: 1 / 2 / 2 / 3;
     }
-
     .detail {
         grid-area: 2 / 1 / 3 / 3;
     }

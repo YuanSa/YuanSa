@@ -12,6 +12,10 @@ h2 {
   border-color: #ccc;
 }
 
+p {
+  margin: 0;
+}
+
 .image {
   width: 1em;
   max-height: 1em;
@@ -54,14 +58,31 @@ h2 {
 }
 .items .item {
   display: grid;
-  margin-bottom: 1em;
-  padding: 0 0.75rem;
+  padding: 0.5em 0.75rem;
   width: 100%;
+}
+.items .item * {
+  align-self: center;
+}
+.items .item .title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.items .item .subtitle {
+  color: #999;
+  font-size: 0.75em;
+  font-weight: lighter;
 }
 .items .item .location,
 .items .item .date {
   justify-self: end;
   text-align: right;
+}
+.items .item .detail {
+  padding: 0 1em;
+}
+.items .item:hover {
+  background-color: #eee;
 }
 .items .item_simple {
   margin: 0;
@@ -98,6 +119,11 @@ h2 {
   transition: all 0.3s;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -124,6 +150,13 @@ body #page aside {
   margin-left: 2em;
   width: max-content;
   height: fit-content;
+}
+body footer {
+  padding: 0.25em 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .card {

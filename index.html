@@ -7,8 +7,8 @@
             name="description"
             content="杨子涵，Yang.Zihan@columbia.edu，+1(646)919-3375。哥伦比亚大学在读MSEE，电子科技大学工学学士。掌握C、Python、Java、PHP、HTML/CSS、JavaScript、SQL、Matlab、Verilog、VHDL语言，和Git、MySQL、Modelsim、Camera 4D、Adobe等软件操作。开发过多个实践项目，包括物联网、大数据、在线教育、创意实验等。"
         />
-        <title>杨子涵简历 - 元卅馆</title>
-        <link rel="stylesheet" media="screen" href="css/index.css" />
+        <title>个人简历 - 元卅馆</title>
+        <link rel="stylesheet" media="screen" href="css/newindex.css" />
         <script
             src="https://kit.fontawesome.com/d0b7ea6fca.js"
             onerror="alert('Font-awesome 资源无法访问，您的浏览可能出现异常。\n如有需要，请挂载VPN后重试。');"
@@ -18,359 +18,44 @@
     <body>
         <header></header>
         <div id="page">
-            <main>
-                <img class="icon" src="icon.png" alt="元卅馆标志" />
-                <h1>杨子涵</h1>
+            <main class="card">
+                <img class="image" src="img/icon.png" alt="" />
+                <h1>{{personal.name}}</h1>
                 <div class="info">
-                    <a class="email" href="mailto:yang.zihan@columbia.edu">
-                        Yang.Zihan@columabi.edu
+                    <a class="email" href="mailto:{{ personal.email }}">
+                        {{ personal.email }}
                     </a>
-                    <div class="info_phone">+1 (646) 919-3375</div>
-                    <a class="printonly" href="http://www.linkedin.com/in/yangzihan1998">
-                        http://www.linkedin.com/in/yangzihan1998
-                    </a>
-                    <a class="info_address" href="https://goo.gl/maps/qPy2BBSCTk73gsfFA">
-                        354 Cathedral Parkway, New York, NY 10025
-                    </a>
+                    <div class="info_phone">
+                        {{ personal.phone }}
+                    </div>
+                    <div class="info_address">
+                        {{ personal.address }}
+                    </div>
                 </div>
                 <div class="contacts">
-                    <a
-                        style="color: hsl(200, 100%, 40%);"
-                        href="http://www.linkedin.com/in/yangzihan1998"
-                        ><i class="fab fa-linkedin"></i
-                    ></a>
-                    <a style="color: hsl(0, 100%, 45%);" href=""><i class="fab fa-youtube"></i></a>
-                    <a style="color: hsl(0, 100%, 45%);" href=""><i class="fab fa-weibo"></i></a>
+                    <a v-for="link of links" :href="link.url">
+                        <img class="icon" :src="'img/icons/'+link.icon+'.png'" alt="" />
+                    </a>
                 </div>
-                <section id="test">
-                    <h2>教育经历</h2>
-                    <div class="item item_pd">
-                        <div class="head">
-                            <div class="title">
-                                <a class="name" href="https://www.columbia.edu/" target="_blank"
-                                    >哥伦比亚大学<i class="fas fa-external-link-alt"></i
-                                ></a>
-                                <div class="subname">电气工程 硕士 GPA: 3.5/4.0</div>
-                            </div>
-                            <div class="datetime">
-                                <div class="position">美国 纽约</div>
-                                <div class="date">2019年9月 - 2020年10月</div>
-                            </div>
+                <section class="items" v-for="exp in experience">
+                    <h2>{{ exp.title }}</h2>
+                    <div
+                        v-for="item in exp.contents"
+                        :class="['item',item.subtitle? 'item_rich' : (item.name ? 'item_normal' : 'item_simple')]"
+                    >
+                        <div class="title" v-if="item.name">{{ item.name }}</div>
+                        <div class="subtitle" v-if="item.subtitle">{{ item.subtitle }}</div>
+                        <div class="location" v-if="item.subtitle">{{ item.position }}</div>
+                        <div class="date" v-if="item.name">
+                            {{ item.dateFrom }} {{item.dateTill ? '-' : ''}} {{ item.dateTill }}
                         </div>
-                        <div class="details">
-                            <ul>
-                                <li>
-                                    主要课程：前端、算法、物联网、人工智能、大数据、区块链、5G、量子计算
-                                    等
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item item_pd">
-                        <div class="head">
-                            <div class="title">
-                                <a class="name" href="https://www.uestc.edu.cn/" target="_blank"
-                                    >电子科技大学<i class="fas fa-external-link-alt"></i
-                                ></a>
-                                <div class="subname">光电信息科学与工程 工学 学士 GPA: 3.8/4.0</div>
-                            </div>
-                            <div class="datetime">
-                                <div class="position">中国 成都</div>
-                                <div class="date">2015年9月 - 2019年7月</div>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <ul>
-                                <li>主要课程：C、VHDL、Matlab 等</li>
-                                <li>获 人民一等奖学金、人民二等教学金 等多次奖学金</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h2>技能</h2>
-                    <div class="item_l">
-                        <div class="key">编程语言</div>
-                        <div class="value">
-                            HTML5/CSS3, JavaScript, SQL, Python, Java, PHP, C, Matlab, VHDL, Verilog
-                        </div>
-                    </div>
-                    <div class="item_l">
-                        <div class="key">软件技能</div>
-                        <div class="value">
-                            Vue, Django, MySQL, DynamoDB, Highchart, Git, Matlab, Photoshop,
-                            Premiere Pro, LaTeX 等
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h2>实践项目</h2>
-                    <div class="item item_pd">
-                        <div class="head">
-                            <div class="title">
-                                <a class="name" href="http://uestc.wiki/" target="_blank">
-                                    在线教育应用：电子科技大学在线评教系统
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                            <div class="datetime">
-                                <div class="date">2018年6月 至 2019年6月</div>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <ul>
-                                <li>
-                                    使用 HTML/CSS, JS, PHP, MySQL 实现了电子科技大学在线评教系统
-                                </li>
-                                <li>通过用户自定义各项评分权重，实现了个性化课程、教师推荐</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item item_pd">
-                        <div class="head">
-                            <div class="title">
-                                <a class="name" href="https://iotcolumbia2020best.weebly.com/"
-                                    >IoT应用：自动补货及余量监控系统<i
-                                        class="fas fa-external-link-alt"
-                                    ></i
-                                ></a>
-                            </div>
-                            <div class="datetime">
-                                <div class="date">2020年3月 至 5月</div>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <ul>
-                                <li>使用树莓派获取监测物品重量变化，将重量数据发送至服务器</li>
-                                <li>
-                                    使用Django操作DynamoDB记录变化，并使用线性回归预测物品耗尽时间
-                                </li>
-                                <li>
-                                    在耗尽前一段时间，通过AWS
-                                    SNS服务向用户发送电子邮件提醒其及时补货
-                                </li>
-                                <li>
-                                    使用Django与Highchart制作Dashboard展示物品余量变化情况与预测耗尽时间
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item item_pd">
-                        <div class="head">
-                            <div class="title">
-                                <div class="name">IoT应用：纽约地铁出行线路规划系统</div>
-                            </div>
-                            <div class="datetime">
-                                <div class="date">2020年2月 至 3月</div>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <ul>
-                                <li>通过纽约地铁 MTA API 获取地铁运行数据</li>
-                                <li>
-                                    使用 Python 处理数据，并将数据上传至亚马逊云服务 AWS 数据库
-                                    DynamoDB
-                                </li>
-                                <li>
-                                    通过 MTA 数据进行行程规划，向用户发送短信、邮件，提示是否换乘
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item item_pd">
-                        <div class="head">
-                            <div class="title">
-                                <a
-                                    class="name"
-                                    href="https://www.yuansasi.com/lab/bestbp/"
-                                    target="_blank"
-                                >
-                                    大数据分析：英雄联盟角色推荐系统
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                            <div class="datetime">
-                                <div class="date">2019年10月 至 12月</div>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <ul>
-                                <li>
-                                    提出了 CCM
-                                    推荐算法，通过多场游戏数据训练得到推荐模型，通过模型做出阵容推荐。
-                                </li>
-                                <li>使用 HTML/CSS, JS, PHP, Python 在服务器实现了 Demo 展示</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="more" onclick="this.className=''">
-                        <div class="click">展示更多</div>
-                        <div class="item item_pd">
-                            <div class="head">
-                                <div class="title">
-                                    <a
-                                        class="name"
-                                        href="http://yuansasi.com/lab/colorpuzzle/x/"
-                                        target="_blank"
-                                        >小游戏：Color Puzzle<i class="fas fa-external-link-alt"></i
-                                    ></a>
-                                </div>
-                                <div class="datetime">
-                                    <div class="date">2020年4月26日</div>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <ul>
-                                    <li>使用 HTML/CSS, JS 编写了一款网页小游戏。</li>
-                                    <li>玩家交换色块的位置，使色块形成平滑渐变的排列。</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item item_pd">
-                            <div class="head">
-                                <div class="title">
-                                    <a
-                                        class="name"
-                                        href="http://yuansasi.com/lab/smart"
-                                        target="_blank"
-                                        >本科 IoT 毕业设计：远程室内温湿度监测系统<i
-                                            class="fas fa-external-link-alt"
-                                        ></i
-                                    ></a>
-                                </div>
-                                <div class="datetime">
-                                    <div class="date">2018年12月 至 2019年6月</div>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <ul>
-                                    <li>
-                                        使用 C 语言，通过 STM32 芯片、SHT20 传感器模块、ESP8266
-                                        Wi-Fi 模块和 OLED 模块搭建了软硬件系统
-                                    </li>
-                                    <li>
-                                        使用HTML/CSS/JS/Highchart在网页端和微信小程序端
-                                        实现了远程、实时数据监测，及历史数据统计、展示功能。
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item item_pd">
-                            <div class="head">
-                                <div class="title">
-                                    <a
-                                        class="name"
-                                        href="http://yuansasi.com/lab/2019ncov/"
-                                        target="_blank"
-                                        >COVID-19 疫情趋势监控<i
-                                            class="fas fa-external-link-alt"
-                                        ></i
-                                    ></a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <ul>
-                                    <li>
-                                        从卫健委网站收集数据到JSON文件，JS读取处理，调用Highchart展示
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item item_pd">
-                            <div class="head">
-                                <div class="title">
-                                    <a
-                                        class="name"
-                                        href="http://yuansasi.com/lab/music/"
-                                        target="_blank"
-                                        >Music Now! 表白神器<i class="fas fa-external-link-alt"></i
-                                    ></a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <ul>
-                                    <li>持续点击画面播放音乐，不点击画面则逐渐停止</li>
-                                    <li>
-                                        如果输入正确秘密口令则有彩蛋，包括图标、音乐，和在播放到某段时，画面中间的耳机图标变为自己的联系方式。
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item item_pd">
-                            <div class="head">
-                                <div class="title">
-                                    <a
-                                        class="name"
-                                        href="http://yuansasi.com/lab/chess/board.html"
-                                        target="_blank"
-                                        >单机黑白棋<i class="fas fa-external-link-alt"></i
-                                    ></a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <ul>
-                                    <li>极简单代码，实现一人一步的单机黑白棋游戏</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item item_pd">
-                            <div class="head">
-                                <div class="title">
-                                    <div class="name">“望” 防失联系统（鸽中）</div>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <ul>
-                                    <li>每天定时签到，超时一定时间未签到则自动通知紧急联系人</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h2>课外活动</h2>
-                    <div class="item item_pd">
-                        <div class="head">
-                            <div class="title">
-                                <div class="name">电子科技大学光电信息学院新闻中心部长</div>
-                            </div>
-                            <div class="datetime">
-                                <div class="date">2016年9月 至 2017年9月</div>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <ul>
-                                <li>管理学院微信公众号，主攻视频制作和视觉设计</li>
-                                <li>
-                                    改革内容生产模式，通过宣传、制作视频，在各视频平台获得了 1.3
-                                    万订阅，75 万次播放
-                                </li>
-                                <li>带领团队取得了校十佳新媒体大赛第二名</li>
-                                <li>获得学院分团委“优秀部长”称号</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item item_pd">
-                        <div class="head">
-                            <div class="title">
-                                <div class="name">新加坡国立大学创新管理项目</div>
-                            </div>
-                            <div class="datetime">
-                                <div class="date">2017年7月</div>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <ul>
-                                <li>调查环球影城商业模式并提出改进建议</li>
-                                <li>所在团队表现优异，获得了最佳小队称号</li>
-                                <li>获得新国大工程学院执行董事 Hang Chang Chieh 推荐信</li>
-                            </ul>
+                        <div class="detail">
+                            <p v-for="line in item.detail">{{ line }}</p>
                         </div>
                     </div>
                 </section>
             </main>
-            <aside id="contents">
+            <aside class="card" id="contents">
                 <h1 onclick="window.scrollTo(0,0);" style="cursor: pointer;">导航</h1>
             </aside>
         </div>

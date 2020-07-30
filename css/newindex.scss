@@ -1,0 +1,47 @@
+@use 'components';
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    background: url(../img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    #page {
+        display: flex;
+        justify-content: center;
+
+        main {
+            flex-grow: 1;
+            max-width: 70em;
+        }
+        aside {
+            flex-grow: 0;
+            position: sticky;
+            top: 2em;
+            margin-left: 2em;
+            width: max-content;
+            height: fit-content;
+        }
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12.5em 0 5em 0;
+    padding: 1em;
+    border-radius: 0.7em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+}

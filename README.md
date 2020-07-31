@@ -8,3 +8,5 @@
 
 -   [EECS6765: Internet of Things - Systems and Physical Data Analytics](https://github.com/zy2362/ars) [Website](https://iotcolumbia2020best.weebly.com/)
 -   [EECS6893: Big Data Analytics](https://github.com/zy2362/BestPickLOL) [Demo](http://yuansasi.com/lab/bestbp)
+
+[个人简历](http://yuansasi.com/resume)

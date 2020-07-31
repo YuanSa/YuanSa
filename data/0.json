@@ -6,9 +6,13 @@
         "address": "354 Cathedral Parkway, New York, NY 10025"
     },
     "links": [
+        { "icon": "github", "url": "https://github.com/YuanSa" },
         { "icon": "linkedin", "url": "http://www.linkedin.com/in/yangzihan1998" },
-        { "icon": "youtube", "url": "" },
-        { "icon": "weibo", "url": "" }
+        {
+            "icon": "youtube",
+            "url": "https://www.youtube.com/channel/UCBG-9Xbf0U0PuDLydpr-GGQ?view_as=subscriber"
+        },
+        { "icon": "weibo", "url": "http://weibo.com/yuansasi" }
     ],
     "experience": [
         {
@@ -57,8 +61,17 @@
                         "使用 IIS、PHP、云 MySQL 在 CVM 上搭建服务器，实现了用户自定义评分权重、个性化课程、教师推荐等功能。"
                     ],
                     "link": [
-                        { "text": "Demo", "icon": "link", "url": "", "default": true },
-                        { "text": "GitHub", "icon": "github", "url": "" }
+                        {
+                            "text": "demo",
+                            "icon": "link",
+                            "url": "http://uestc.wiki",
+                            "default": true
+                        },
+                        {
+                            "text": "github",
+                            "icon": "github",
+                            "url": "https://github.com/YuanSa/judge-uestc"
+                        }
                     ]
                 },
                 {
@@ -72,8 +85,17 @@
                         "使用 Django 与 Highchart 制作 Dashboard 展示物品余量变化情况与预测耗尽时间"
                     ],
                     "link": [
-                        { "text": "Demo", "icon": "link", "url": "", "default": true },
-                        { "text": "GitHub", "icon": "github", "url": "" }
+                        {
+                            "text": "demo",
+                            "icon": "link",
+                            "url": "https://iotcolumbia2020best.weebly.com/",
+                            "default": true
+                        },
+                        {
+                            "text": "github",
+                            "icon": "github",
+                            "url": "https://github.com/zy2362/ars"
+                        }
                     ]
                 },
                 {
@@ -83,11 +105,20 @@
                     "detail": [
                         "使用过往游戏数据训练模型，根据当前BP情况，推荐下一个（组）最佳BP英雄",
                         "提出了 CCM 推荐算法，通过多场游戏数据训练得到推荐模型，通过模型做出阵容推荐。",
-                        "使用 HTML/CSS/JS, PHP, Python 在服务器实现了 Demo 展示"
+                        "使用 HTML/CSS/JS, PHP, Python 在服务器实现了 demo 展示"
                     ],
                     "link": [
-                        { "text": "Demo", "icon": "link", "url": "", "default": true },
-                        { "text": "GitHub", "icon": "github", "url": "" }
+                        {
+                            "text": "demo",
+                            "icon": "link",
+                            "url": "http://yuansasi.com/lab/bestbp/",
+                            "default": true
+                        },
+                        {
+                            "text": "github",
+                            "icon": "github",
+                            "url": "https://github.com/zy2362/BestPickLOL"
+                        }
                     ]
                 },
                 {
@@ -99,8 +130,12 @@
                         "使用HTML/CSS/JS/Highchart在网页端和微信小程序端 实现了远程、实时数据监测，及历史数据统计、展示功能。"
                     ],
                     "link": [
-                        { "text": "Demo", "icon": "link", "url": "", "default": true },
-                        { "text": "GitHub", "icon": "github", "url": "" }
+                        {
+                            "text": "demo",
+                            "icon": "link",
+                            "url": "http://yuansasi.com/lab/smart",
+                            "default": true
+                        }
                     ]
                 }
             ]
@@ -111,15 +146,15 @@
                 {
                     "detail": ["成语接龙：基于 Vue 的成语接龙游戏"],
                     "link": [
-                        { "text": "Demo", "icon": "link", "url": "", "default": true },
-                        { "text": "GitHub", "icon": "github", "url": "" }
+                        { "text": "demo", "icon": "link", "url": "", "default": true },
+                        { "text": "github", "icon": "github", "url": "" }
                     ]
                 },
                 {
                     "detail": ["Color Puzzle：色彩解谜游戏——交换色块，还原渐变"],
                     "link": [
-                        { "text": "Demo", "icon": "link", "url": "", "default": true },
-                        { "text": "GitHub", "icon": "github", "url": "" }
+                        { "text": "demo", "icon": "link", "url": "", "default": true },
+                        { "text": "github", "icon": "github", "url": "" }
                     ]
                 },
                 {
@@ -127,8 +162,8 @@
                         "Music Now! 表白神器：点击音乐表白游戏——持续点击以维持播放，输入口令216触发彩蛋"
                     ],
                     "link": [
-                        { "text": "Demo", "icon": "link", "url": "", "default": true },
-                        { "text": "GitHub", "icon": "github", "url": "" }
+                        { "text": "demo", "icon": "link", "url": "", "default": true },
+                        { "text": "github", "icon": "github", "url": "" }
                     ]
                 }
             ]
@@ -157,6 +192,7 @@
                 },
                 {
                     "name": "新加坡国立大学创新管理项目",
+                    "subtitle": " ",
                     "position": "新加坡",
                     "dateFrom": "2017年7月",
                     "detail": [

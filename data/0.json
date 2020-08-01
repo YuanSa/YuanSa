@@ -43,7 +43,11 @@
             "contents": [
                 {
                     "detail": [
-                        "掌握语言：HTML5/CSS3, JavaScript, SQL, Python, Java, PHP, C, Matlab, VHDL, Verilog",
+                        "掌握语言：HTML5/CSS3, JavaScript, SQL, Python, Java, PHP, C, Matlab, VHDL, Verilog"
+                    ]
+                },
+                {
+                    "detail": [
                         "技能工具：Vue, Django, MySQL, DynamoDB, Highchart, Git, Matlab, Photoshop, Premiere Pro, LaTeX 等"
                     ]
                 }

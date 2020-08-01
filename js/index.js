@@ -29,7 +29,7 @@ const resumeApp = {
                 // this.personal.email = userData.personal.email;
             });
     },
-    created() {
+    mounted() {
         this.done = true;
     },
     computed: {},

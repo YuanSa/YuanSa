@@ -170,6 +170,20 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+body .loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 1.25em;
+  font-weight: bold;
+  background: white url(../img/loading.svg) center no-repeat;
+}
 body header {
   position: sticky;
   top: 0;
@@ -229,6 +243,16 @@ body footer {
   border-radius: 0.7em;
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
   background-color: white;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: 82em) {

@@ -1,6 +1,7 @@
 const resumeApp = {
     data() {
         return {
+            done: false,
             personal: {
                 // name: ``,
                 // email: ``,
@@ -27,6 +28,9 @@ const resumeApp = {
                 // this.personal.name = userData.personal.name;
                 // this.personal.email = userData.personal.email;
             });
+    },
+    created() {
+        this.done = true;
     },
     computed: {},
     methods: {},

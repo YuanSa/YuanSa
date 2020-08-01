@@ -23,7 +23,13 @@
             </div>
         </header> -->
         <div id="page">
-            <main class="card">
+            <transition name="fade">
+                <div class="loading" v-show="!done">
+                    <p>正在加载</p>
+                    <p>Laoding</p>
+                </div>
+            </transition>
+            <main class="card" v-show="done">
                 <img class="image" src="img/icon.png" alt="" />
                 <h1>{{personal.name}}</h1>
                 <div class="info">
@@ -71,7 +77,7 @@
                     </div>
                 </section>
             </main>
-            <aside class="card" id="contents">
+            <aside class="card" id="contents" v-show="done">
                 <h1 onclick="window.scrollTo(0,0);" style="cursor: pointer;">目录</h1>
                 <a v-for="(exp, index) in experience" :href="'#sec'+index"> {{ exp.title }} </a>
             </aside>

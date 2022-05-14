@@ -1,13 +1,10 @@
-此为杨子涵个人账号，发布个人项目。包括：
+杨子涵，字节跳动音乐业务前端开发工程师。
 
--   [仿生函数命名法](https://github.com/YuanSa/mnl.js)
--   [点灯评教（电子科技大学评教系统）](https://github.com/YuanSa/judge-uestc) [Demo](http://uestc.wiki)
--   [PS 教程](https://github.com/YuanSa/PS-Tutotial)
--   实验性小游戏：[成语接龙](https://github.com/YuanSa/chengyujielong)、[Color Puzzle](https://github.com/YuanSa/color-puzzle)、[Music Now!](https://github.com/YuanSa/music-now)
+专业 React，学习跨端中。
 
-另有哥大学校账号: [zy2363](https://github.com/zy2362) 内含两门课程设计:
+- QQ: 315038639
+- 工作邮箱：yangzihan.normal@bytedance.com
 
--   [EECS6765: Internet of Things - Systems and Physical Data Analytics](https://github.com/zy2362/ars) [Website](https://iotcolumbia2020best.weebly.com/)
--   [EECS6893: Big Data Analytics](https://github.com/zy2362/BestPickLOL) [Demo](http://yuansasi.com/lab/bestbp)
+此为杨子涵个人账号，因为工作繁忙没有维护，先当云盘用了，啥时候卷不动了再整理一下。
 
-[个人简历](http://yuansasi.com/resume)
+[个人简历（也没更新）](http://yuansasi.com/resume)

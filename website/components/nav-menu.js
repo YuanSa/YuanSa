@@ -3,9 +3,9 @@ class NavMenu extends HTMLElement {
     const current = this.getAttribute("current") || "";
     const lang = localStorage.getItem("site-language") || "zh";
     const items = [
-      ["work", "/work/", "业务解决方案", "Business Solutions"],
-      ["blog", "/blog/", "博客", "Thoughts"],
-      ["projects", "/projects/", "个人项目", "Personal Projects"],
+      ["work", "/work/", "业务解决方案", "Biz Solutions"],
+      ["blog", "/blog/", "博客", "Blog"],
+      ["projects", "/projects/", "个人项目", "Projects"],
       ["resume", "/resume/", "简历", "Resume"],
     ];
 

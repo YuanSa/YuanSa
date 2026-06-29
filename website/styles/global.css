@@ -22,6 +22,11 @@ body {
   flex-direction: column;
 }
 
+::selection {
+  color: #fff;
+  background: var(--color-accent);
+}
+
 a {
   color: inherit;
 }

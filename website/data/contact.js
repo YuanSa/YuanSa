@@ -7,7 +7,8 @@ export const contact = {
     zh: "全栈 AI 工程师 / 业务解决方案提供者",
     en: "Professional full-stack AI engineer",
   },
-  avatar: "https://avatars.githubusercontent.com/u/13344375?v=4",
+  avatar: "/assets/photos/professional-avatar-dark.png",
+  portrait: "/assets/photos/professional-portrait-dark.png",
   email: "contact@yangzihan.org",
   phone: {
     display: "(+86) 184 2809 6715",

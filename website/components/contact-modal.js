@@ -7,7 +7,10 @@ class ContactModal extends HTMLElement {
       <dialog class="contact-modal" aria-labelledby="contact-title">
         <form method="dialog" class="contact-card-modal">
           <button class="modal-close" value="close" aria-label="关闭联系弹窗">×</button>
-          <img class="contact-card-modal__photo" src="${contact.avatar}" alt="${contact.name.zh}照片" />
+          <picture class="contact-card-modal__media">
+            <source media="(max-width: 760px)" srcset="${contact.avatar}" />
+            <img class="contact-card-modal__photo" src="${contact.portrait}" alt="${contact.name.zh}照片" />
+          </picture>
           <div class="contact-card-modal__body">
             <div class="contact-card-modal__identity">
               <h2 id="contact-title">${lang === "en" ? contact.name.en : contact.name.zh}</h2>

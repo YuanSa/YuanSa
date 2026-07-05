@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-title-zh="想法 | 杨子涵" data-title-en="Notes | YANG Zihan">
+<html lang="zh-CN" data-title-zh="博客 | 杨子涵" data-title-en="Blog | YANG Zihan">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>想法 | 杨子涵</title>
-  <meta name="description" content="杨子涵关于 AI、产品、组织和工程的想法。" />
+  <title>博客 | 杨子涵</title>
+  <meta name="description" content="杨子涵的博客，记录前端、人工智能、个人随笔和经验总结。" />
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/global.css" />
   <script type="module" src="/components/site-header.js"></script>
@@ -15,26 +15,33 @@
   <site-header current="blog"></site-header>
   <main class="content-page page-container">
     <div class="content-page__lead">
-      <h1 data-en="Write judgment down, and let experience take shape.">把判断写下来，让经验慢慢成形。</h1>
-      <p data-en="Notes on AI products, engineering organizations, business fields, and personal working methods. I write for reusable judgment, not frequency.">这里记录我对 AI 产品、工程组织、业务现场和个人工作方法的观察。文字不追求频率，追求可复用的判断。</p>
+      <h1 data-en="Write down the work, the dream, and the tools changing both.">写下工作、梦，以及正在改变它们的工具。</h1>
+      <p data-en="Two shelves for now: Frontend and Dreams for personal essays and life notes; Artificial Intelligence for applied records and technical reflections.">目前先放两个版块：“前端与梦”收纳个人碎碎念、人生感悟和随笔；“人工智能”记录技术应用、实践经验和阶段性总结。</p>
     </div>
-    <div class="content-grid">
-      <article class="content-tile">
-        <small>Essay</small>
-        <h2 data-en="AI is not a feature. It is a workflow variable.">AI 不是功能，而是流程变量</h2>
-        <p data-en="When models enter real workflows, the key question shifts from whether they can answer to who confirms and how to roll back.">当模型进入真实工作流，关键问题会从“能不能回答”变成“由谁确认、如何回滚”。</p>
+    <section class="collection-grid" aria-label="博客版块">
+      <article class="collection-card collection-card--open">
+        <div>
+          <small>Collection 01</small>
+          <h2 data-en="Frontend and Dreams">前端与梦</h2>
+          <p data-en="Personal fragments, reflections, essays, and the private weather behind building things.">个人碎碎念、人生感悟、随笔，以及在构建事物背后的私人天气。</p>
+        </div>
+        <a class="post-row" href="/blog/front-end-and-dream/lights-at-the-door/">
+          <span>
+            <strong data-en="Someone Once Lit a Fire at This Door">曾有人在这门口点亮灯火</strong>
+            <em data-en="Essay">随笔</em>
+          </span>
+          <b aria-hidden="true">↗</b>
+        </a>
       </article>
-      <article class="content-tile">
-        <small>Essay</small>
-        <h2 data-en="System design begins with boundary design.">系统设计首先是边界设计</h2>
-        <p data-en="The stability of complex systems often comes from clearly separating what should be automated from what must keep human judgment.">复杂系统的稳定性，常常来自清楚地区分什么应该自动化，什么必须保留人的判断。</p>
+      <article class="collection-card collection-card--closed" aria-disabled="true">
+        <div>
+          <small>Collection 02</small>
+          <h2 data-en="Artificial Intelligence">人工智能</h2>
+          <p data-en="Applied AI records, practical notes, and experience summaries. This section is not open yet.">人工智能技术应用记录、经验总结和阶段性复盘。栏目暂未开放。</p>
+        </div>
+        <span class="collection-status" data-en="Coming soon">暂未开放</span>
       </article>
-      <article class="content-tile">
-        <small>Essay</small>
-        <h2 data-en="Turn experience into portable structure.">把经验变成可迁移结构</h2>
-        <p data-en="The value of writing is not recording what happened, but extracting judgment frameworks that can be used again.">写作的价值不是记录发生过什么，而是抽出下次还能使用的判断框架。</p>
-      </article>
-    </div>
+    </section>
   </main>
   <site-footer></site-footer>
   <contact-modal></contact-modal>

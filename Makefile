@@ -20,6 +20,9 @@ PERSONAL_WEBSITE_R2_DEST := s3://$(PERSONAL_WEBSITE_R2_BUCKET)
 
 .PHONY: deploy-website check-deploy-website
 
+dev:
+	cd website && python3 -m http.server 4173
+
 deploy-website: check-deploy-website
 	aws s3 sync $(SITE_DIR)/ $(PERSONAL_WEBSITE_R2_DEST) \
 		--endpoint-url $(PERSONAL_WEBSITE_R2_ENDPOINT) \

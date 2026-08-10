@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>个人项目 | 杨子涵</title>
-  <meta name="description" content="杨子涵的个人项目与长期兴趣。" />
+  <meta name="description" content="杨子涵的个人项目，包括 Anti-FOMO 与成语接龙等作品。" />
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/global.css" />
   <script type="module" src="/components/site-header.js"></script>
@@ -14,27 +14,32 @@
 <body>
   <site-header current="projects"></site-header>
   <main class="content-page page-container">
-    <div class="content-page__lead">
-      <h1 data-en="Small projects reveal long-term judgment.">小项目是长期判断的显影。</h1>
-      <p data-en="These projects are not made for noise. They keep refining usable structures around tools, writing, music, AI, and knowledge management.">这些项目不追求热闹，而是围绕工具、写作、音乐、AI 与知识管理，持续打磨能被真实使用的结构。</p>
+    <div class="content-page__lead content-page__lead--title-only">
+      <h1 data-en="Projects">个人项目</h1>
     </div>
-    <div class="content-grid">
-      <article class="content-tile">
-        <small>01 / Tool</small>
-        <h2 data-en="AI workflow prototypes">AI 工作流原型</h2>
-        <p data-en="Explore how model capability can enter repeated workflows while preserving human judgment and audit paths.">探索模型能力如何进入重复流程，并保留人工判断与审计路径。</p>
-      </article>
-      <article class="content-tile">
-        <small>02 / Writing</small>
-        <h2 data-en="Personal knowledge system">个人知识系统</h2>
-        <p data-en="Connect reading, notes, projects, and output into a maintainable long-term system.">把阅读、笔记、项目和输出连接成一个可维护的长期系统。</p>
-      </article>
-      <article class="content-tile">
-        <small>03 / Product</small>
-        <h2 data-en="Music industry tools">音乐行业工具</h2>
-        <p data-en="Build clearer product structures around distribution, metadata, validation, and operational collaboration.">围绕发行、元数据、校验和运营协作建立更清晰的产品结构。</p>
-      </article>
-    </div>
+    <a class="featured-project" href="https://antifomo.net/" target="_blank" rel="noreferrer">
+      <div class="featured-project__media">
+        <img src="/assets/projects/anti-fomo-home.jpg" width="2061" height="1166" alt="Anti-FOMO 首页界面" />
+      </div>
+      <div class="featured-project__copy">
+        <div>
+          <span class="featured-project__type" data-en="AI intelligence product">AI 情报产品</span>
+          <h2>Anti-FOMO</h2>
+          <p data-en="A personal AI intelligence product for developers. It filters daily AI noise through each user’s stack and career goals, turning change into relevant signals and actionable next steps.">一款面向开发者的个人 AI 情报产品。它根据技术方向和职业目标过滤每日 AI 噪音，把变化整理成值得关注的信号和可执行的下一步。</p>
+        </div>
+        <span class="featured-project__link" data-en="Visit antifomo.net">访问 antifomo.net</span>
+      </div>
+    </a>
+    <section class="miniature-section" aria-labelledby="miniature-title">
+      <h2 id="miniature-title" data-en="Small works">小品</h2>
+      <a class="miniature-project" href="https://github.com/YuanSa/chengyujielong" target="_blank" rel="noreferrer">
+        <div>
+          <h3 data-en="Idiom Chain">成语接龙 · 雅集</h3>
+          <p data-en="A traditional idiom-chain game that runs locally and offline.">可本地离线运行的，传统成语接龙游戏。</p>
+        </div>
+        <span class="miniature-project__link" data-en="View on GitHub">查看 GitHub</span>
+      </a>
+    </section>
   </main>
   <site-footer></site-footer>
   <contact-modal></contact-modal>

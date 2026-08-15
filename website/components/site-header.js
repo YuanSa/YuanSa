@@ -4,6 +4,8 @@ class SiteHeader extends HTMLElement {
   connectedCallback() {
     const current = this.getAttribute("current") || "";
     const lang = localStorage.getItem("site-language") || "zh";
+    const contactZh = this.getAttribute("contact-zh") || "联系我";
+    const contactEn = this.getAttribute("contact-en") || "Contact";
 
     this.innerHTML = `
       <header class="site-header">
@@ -16,7 +18,7 @@ class SiteHeader extends HTMLElement {
             <nav-menu current="${current}"></nav-menu>
           </div>
           <div class="site-header__right">
-            <button class="text-button" type="button" data-contact-open data-en="Contact">联系我</button>
+            <button class="text-button" type="button" data-contact-open data-en="${contactEn}">${contactZh}</button>
             <div class="language-switch" aria-label="语言切换">
               <button type="button" data-language="zh" lang="zh-CN" ${lang === "zh" ? "aria-current=\"true\"" : ""}>中文</button>
               <button type="button" data-language="en" lang="en" ${lang === "en" ? "aria-current=\"true\"" : ""}>EN</button>
@@ -28,8 +30,7 @@ class SiteHeader extends HTMLElement {
 
     this.querySelectorAll("[data-language]").forEach((button) => {
       button.addEventListener("click", () => {
-        const currentLanguage = localStorage.getItem("site-language") === "en" ? "en" : "zh";
-        applyLanguage(currentLanguage === "en" ? "zh" : "en");
+        applyLanguage(button.dataset.language);
       });
     });
 

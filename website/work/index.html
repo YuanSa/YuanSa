@@ -1,69 +1,205 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-title-zh="业务解决方案 | 杨子涵" data-title-en="Business Solutions | YANG Zihan">
+<html class="work-document" lang="zh-CN" data-title-zh="项目接管、系统重构与产品交付 | 杨子涵" data-title-en="Project Takeovers, System Rebuilds, and Product Delivery | YANG Zihan">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>业务解决方案 | 杨子涵</title>
-  <meta name="description" content="从 0 到 1 项目搭建、接手迭代与 AI 项目重构，以及企业数字化、自动化和 AI 工作流落地。" />
+  <title>项目接管、系统重构与产品交付 | 杨子涵</title>
+  <meta
+    name="description"
+    content="AI 写代码项目失控、旧系统难改、产品卡在 Demo、线上故障反复？由经验丰富的全栈工程师接手，先止血，再重构，把项目重新带回可交付。"
+    data-description-zh="AI 写代码项目失控、旧系统难改、产品卡在 Demo、线上故障反复？由经验丰富的全栈工程师接手，先止血，再重构，把项目重新带回可交付。"
+    data-description-en="When an AI-built project is out of control, a legacy system is too risky to change, or a product is stuck at the demo stage, an experienced full-stack engineer takes over and gets delivery moving again."
+  />
+  <link rel="preload" as="image" href="/assets/photos/work-ai-rescue.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="stylesheet" href="/styles/work.css" />
   <script type="module" src="/components/site-header.js"></script>
   <script type="module" src="/components/site-footer.js"></script>
   <script type="module" src="/components/contact-modal.js"></script>
+  <script type="module" src="/components/work-page.js"></script>
 </head>
-<body>
-  <site-header current="work"></site-header>
-  <main class="content-page page-container">
-    <div class="content-page__lead">
-      <h1 data-en="Solve the project in front of you. Upgrade how the business works every day.">解决眼前的项目，也升级长期的工作方式。</h1>
-      <p data-en="I provide technical support across the project lifecycle and help businesses embed digital systems, automation, and AI into daily work.">我提供贯穿项目全生命周期的技术支持，也帮助企业把数字化、自动化与 AI 真正融入日常工作。</p>
-    </div>
+<body class="work-page-shell">
+  <site-header
+    current="work"
+    contact-zh="说说项目卡在哪"
+    contact-en="Tell me where it’s stuck"
+  ></site-header>
 
-    <section class="solution-section" aria-labelledby="project-support-title">
-      <div class="solution-section__header">
-        <h2 id="project-support-title" data-en="Technical support for every project stage">项目全阶段技术支持</h2>
-        <p data-en="From kickoff and takeover to rescue and rebuild, I step in when a project needs both sound judgment and strong execution.">从立项、接手到救火重构，在项目最需要判断力与执行力的阶段快速介入。</p>
+  <main id="main-content" class="work-page">
+    <section class="work-hero page-container" aria-labelledby="work-hero-title">
+      <div class="work-hero__copy" data-reveal>
+        <p class="work-eyebrow" data-en="Project rescue / system rebuild / product delivery">项目接管 / 系统重构 / 产品交付</p>
+        <h1 id="work-hero-title">
+          <span data-en="Project out of control?">项目失控了？</span>
+          <span data-en="I’ll take it from here.">我来接手。</span>
+        </h1>
+        <p class="work-hero__summary" data-en="I take over AI-generated code messes, risky legacy systems and stalled demos, then make them shippable again.">我接手 AI 代码屎山、难改的旧系统和卡在 Demo 的产品，把它们重新带回可交付状态。</p>
+        <div class="work-actions">
+          <button class="work-button work-button--primary" type="button" data-contact-open data-en="Tell me where it’s stuck">说说项目卡在哪</button>
+          <a class="work-button work-button--secondary" href="#approach" data-en="See how I take over">看我怎么接手</a>
+        </div>
       </div>
 
-      <div class="solution-cards solution-cards--project">
-        <article class="solution-card">
-          <span class="solution-card__label" data-en="Build">新建</span>
-          <h3 data-en="Build a new project from zero to one">从 0 到 1，快速搭建项目</h3>
-          <p data-en="Turn an unclear business goal into a practical product and technical plan, then deliver the architecture, core features, and first launch.">把模糊的业务目标转化为清晰的产品与技术方案，完成架构设计、核心功能开发和上线交付，尽快跑通第一版。</p>
+      <figure class="work-hero__media" data-reveal>
+        <img
+          src="/assets/photos/work-ai-rescue.jpg"
+          width="900"
+          height="1124"
+          fetchpriority="high"
+          decoding="async"
+          alt="一座濒临失衡的黑色模块结构，被暗红色支撑件重新稳住"
+          data-en-alt="A collapsing stack of black modules stabilized by a muted red structural brace"
+        />
+      </figure>
+    </section>
+
+    <section id="project-support-title" class="work-recognition page-container" aria-labelledby="recognition-title">
+      <div class="work-recognition__copy" data-reveal>
+        <h2 id="recognition-title">
+          <span data-en="You may not need more code.">你需要的可能不是更多代码，</span>
+          <span data-en="You need someone to see what is actually going wrong.">而是有人先把局面看清。</span>
+        </h2>
+        <p data-en="When requirements, code, architecture and delivery start dragging each other down, adding features only makes the eventual fix more expensive.">当需求、代码、架构和交付节奏开始互相拖累，继续堆功能只会让问题越来越贵。</p>
+      </div>
+
+      <div class="work-scenarios" aria-label="常见项目困境" data-en-aria-label="Common project failure scenarios">
+        <article class="work-scenario work-scenario--ai" data-reveal>
+          <p class="work-scenario__type" data-en="AI project takeover">AI 项目接管</p>
+          <h3 data-en="AI writes faster every day. Why is delivery getting slower?">AI 写得越来越快，项目却交得越来越慢？</h3>
+          <p data-en="Cursor and Claude keep producing code, but one change breaks three others, the same logic exists four times, and nobody dares touch the core. Output rises while delivery moves further away.">Cursor 和 Claude 每天都在产出，但改一处坏三处，同一逻辑写了四遍，核心代码却没人敢动。产出越来越多，交付反而越来越远。</p>
+          <p class="work-scenario__answer" data-en="I take over the repository and release path, stop the immediate damage, re-establish clear boundaries, tests and observability, then rebuild in stages. AI returns to being a tool, and the project becomes controllable again.">我会接管仓库与发布链路，先止血，再补边界、测试和监控，分阶段重构。让 AI 回到工具的位置，让项目重新可控。</p>
         </article>
-        <article class="solution-card">
-          <span class="solution-card__label" data-en="Extend">接手</span>
-          <h3 data-en="Take over an existing project and ship new features fast">接手已有项目，快速迭代新功能</h3>
-          <p data-en="Understand the existing codebase, business logic, and ways of working quickly, then add critical capabilities without losing control of risk.">快速理解现有代码、业务逻辑和协作方式，在控制风险的同时补齐关键能力，让新需求稳定上线。</p>
+
+        <article class="work-scenario work-scenario--legacy" data-reveal>
+          <p class="work-scenario__type" data-en="Legacy system">旧系统改造</p>
+          <h3 data-en="The old system still runs the business, but nobody dares change it?">旧系统还在扛业务，却已经没人敢改？</h3>
+          <p data-en="The original authors are gone, documentation is missing and a small request triggers a chain of regressions. I reconstruct the critical business flows, isolate risk and replace modules in order of business value while the system keeps running.">原作者离开、文档缺失，一个小改动就能触发一串回归。我会还原关键业务链路，隔离风险，按业务价值逐步替换，让系统边运行、边变好。</p>
         </article>
-        <article class="solution-card">
-          <span class="solution-card__label" data-en="Rescue">重构</span>
-          <h3 data-en="Rescue and rebuild an AI project that has lost control">接手并重构失控的 AI 项目</h3>
-          <p data-en="For AI projects buried in technical debt, unstable results, and tangled workflows, reset the goals, architecture, and delivery path to make progress controllable again.">针对技术债堆积、效果不稳、链路混乱或难以维护的 AI 项目，重新梳理目标、架构和交付路径，让项目恢复可控。</p>
+
+        <article class="work-scenario work-scenario--launch" data-reveal>
+          <p class="work-scenario__type" data-en="From demo to launch">从 Demo 到上线</p>
+          <h3 data-en="The demo works. Why does production still feel so far away?">Demo 已经能点了，为什么离上线还这么远？</h3>
+          <p data-en="Accounts, permissions, data, failure handling, admin tooling and monitoring are often where the real work begins. I narrow the idea into a testable MVP, then take it across product decisions, frontend, APIs and deployment to a first release real users can use.">账号、权限、数据、异常、后台和监控，往往才是真正费时的部分。我会把想法收敛成可验证的 MVP，贯通产品、前端、API 与部署，交出真实用户能用的第一版。</p>
+        </article>
+
+        <article class="work-scenario work-scenario--incident" data-reveal>
+          <p class="work-scenario__type" data-en="Incidents and performance">故障与性能</p>
+          <h3 data-en="It slows down or fails at the worst moment, but nobody can reproduce it?">线上一到关键时刻就慢、就挂，却总复现不了？</h3>
+          <p data-en="Intermittent errors, blank screens, timeouts and steadily rising memory usage do not go away after a restart. I use logs, metrics, tracing and profiling to contain the impact, find the root cause, and add tests and monitoring that catch a recurrence.">偶发报错、白屏、接口超时、内存持续上涨，靠重启只会把问题留到下一次。我会从日志、指标、链路追踪和性能剖析入手，先止损，再定位根因，并补上防止复发的测试和监控。</p>
+        </article>
+
+        <article class="work-scenario work-scenario--complexity" data-reveal>
+          <p class="work-scenario__type" data-en="Complex business rules">复杂业务梳理</p>
+          <h3 data-en="Does every new rule require patches in a dozen places?">每来一个新规则，就要在十几个地方打补丁？</h3>
+          <p data-en="Scattered conditions and coupled fields eventually make even the business rules hard to explain. I separate those rules from UI and workflow code, then turn them into configurable, testable and reusable system capabilities.">条件分支散落、字段互相牵连，最后连业务规则都很难说清。我会把规则从页面和流程代码中抽离，整理成可配置、可验证、可复用的系统能力。</p>
+        </article>
+
+        <article class="work-scenario work-scenario--workflow" data-reveal>
+          <p class="work-scenario__type" data-en="AI in real workflows">AI 工作流落地</p>
+          <h3 data-en="The AI demo looks clever. Why does nobody use it at work?">AI Demo 看起来很聪明，接进日常工作却没人用？</h3>
+          <p data-en="Adding a standalone chat box does not make a workflow more efficient. I start with the most time-consuming, measurable bottleneck, connect AI to existing data and tools, keep human review at high-risk points, and expand its use only after it proves useful.">单独做个聊天框不等于提效。我会从最耗时且可衡量的环节切入，把 AI 接进现有数据和工具，在高风险节点保留人工确认，验证有效后再扩大使用范围。</p>
         </article>
       </div>
     </section>
 
-    <section class="solution-section" aria-labelledby="workflow-support-title">
-      <div class="solution-section__header">
-        <h2 id="workflow-support-title" data-en="Upgrade how the organization works">升级企业的日常工作方式</h2>
-        <p data-en="The goal is not just to deliver another system, but to turn technology into a capability people can use every day.">不只交付一个系统，更让技术成为组织每天都能用、愿意用的能力。</p>
+    <section id="approach" class="work-approach page-container" aria-labelledby="approach-title">
+      <span id="workflow-support-title" class="work-anchor-alias" aria-hidden="true"></span>
+      <div class="work-section-intro" data-reveal>
+        <h2 id="approach-title" data-en="Rescue the project first. Then decide what actually needs rebuilding.">先把项目救回来，再决定怎么重构。</h2>
+        <p data-en="I do not recommend a rewrite on day one, and I do not force every project into the same architecture. The first job is to make the project runnable, testable and releasable again.">我不会一上来建议重写，也不会拿一套固定架构套所有项目。第一件事，是让项目重新可运行、可验证、可发布。</p>
       </div>
 
-      <div class="solution-cards solution-cards--workflow">
-        <article class="solution-card">
-          <span class="solution-card__label" data-en="Transform">转型</span>
-          <h3 data-en="Digitize and automate operations with AI-assisted decisions">推动业务数字化、自动化与 AI 辅助决策</h3>
-          <p data-en="Map workflows, data, and decision points into traceable and reusable systems that reduce manual work and support faster, better-informed decisions.">梳理业务流程、数据和决策节点，建设可追踪、可复用的系统能力，减少手工操作，让决策更及时、更有依据。</p>
-        </article>
-        <article class="solution-card">
-          <span class="solution-card__label" data-en="Embed">融入</span>
-          <h3 data-en="Embed automation and AI into daily workflows">让自动化与 AI 融入每日工作流</h3>
-          <p data-en="Connect AI to the tools and processes people already use, with the right human review and safeguards, so efficiency gains become part of normal work.">围绕真实岗位和协作场景，把 AI 接入现有工具与流程，保留必要的人工确认和风险兜底，让提效持续发生。</p>
-        </article>
+      <figure class="work-approach__media" data-reveal>
+        <img
+          src="/assets/photos/work-rebuilt.jpg"
+          width="1280"
+          height="720"
+          loading="lazy"
+          decoding="async"
+          alt="经过重构后边界清晰、连接稳定的黑色模块系统"
+          data-en-alt="A rebuilt modular system with clear boundaries and stable connections"
+        />
+        <figcaption data-en="The goal is not prettier code. It is a system that can ship, change safely, diagnose failures, and be handed over without guesswork.">目标不是让代码更漂亮，而是让系统能上线、改得动、故障查得清，也能顺利交给下一位维护者。</figcaption>
+      </figure>
+
+      <ol class="work-method" aria-label="项目接管方法" data-en-aria-label="Project takeover method">
+        <li data-reveal>
+          <h3 data-en="Understand">看清</h3>
+          <p data-en="Align on the business goal, get the code running, trace the release path, inspect data, dependencies and risks, then produce a prioritized issue list.">对齐业务目标，把代码跑起来，走通发布链路，检查数据、依赖和风险，列出问题清单与处理优先级。</p>
+        </li>
+        <li data-reveal>
+          <h3 data-en="Stabilize">止血</h3>
+          <p data-en="Fix what blocks delivery or threatens production first, then establish a runnable, testable and reversible baseline.">先处理阻塞交付和线上稳定的关键问题，建立可运行、可测试、可回滚的基线。</p>
+        </li>
+        <li data-reveal>
+          <h3 data-en="Restructure">重整</h3>
+          <p data-en="Break the rebuild into increments ranked by business value while continuing to ship. Every change is verifiable, with no high-risk big-bang rewrite.">按业务价值拆分改造，一边交付新需求，一边减少技术债。每一步都可验证，不搞高风险的整体推倒重来。</p>
+        </li>
+        <li data-reveal>
+          <h3 data-en="Hand over safely">交稳</h3>
+          <p data-en="Complete documentation, tests, monitoring and release workflows. I can continue owning the system or help your existing team take it over.">补齐文档、测试、监控与发布流程。可以继续由我负责，也可以让现有团队顺畅接手。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="work-proof page-container" aria-labelledby="proof-title">
+      <div class="work-proof__portrait" data-reveal>
+        <img
+          src="/assets/photos/professional-portrait-dark.png"
+          width="1122"
+          height="1402"
+          loading="lazy"
+          decoding="async"
+          alt="全栈 AI 工程师杨子涵的职业肖像"
+          data-en-alt="Professional portrait of full-stack AI engineer YANG Zihan"
+        />
+      </div>
+
+      <div class="work-proof__story" data-reveal>
+        <h2 id="proof-title" data-en="High-risk projects need more than someone who can make a demo run.">接管高风险项目，靠的不只是一句“我会写代码”。</h2>
+        <p data-en="I have worked long-term on key systems for TikTok’s music business at ByteDance, across frontend systems, BFF APIs, shared component libraries, complex business rules and AI workflows.">我长期参与字节跳动 TikTok 音乐业务的关键系统建设，工作覆盖前端、BFF API、团队组件库、复杂业务规则和 AI 工作流。</p>
+        <a class="work-text-link" href="/resume/" data-en="View full experience">查看完整经历</a>
+      </div>
+
+      <dl class="work-metrics" data-reveal>
+        <div>
+          <dt data-en="1 month">1 个月</dt>
+          <dd data-en="Took SoundOn from plan to its first production launch">完成 SoundOn 从方案到首版上线</dd>
+        </div>
+        <div>
+          <dt data-en="4+ years">4 年+</dt>
+          <dd data-en="Core architecture continued supporting complex product growth">核心架构持续承接复杂业务迭代</dd>
+        </div>
+        <div>
+          <dt data-en="10s to 1s">10 秒到 1 秒</dt>
+          <dd data-en="Reduced online audio-trimming time">优化在线音频剪辑耗时</dd>
+        </div>
+        <div>
+          <dt data-en="10+ use cases">10+ 场景</dt>
+          <dd data-en="Internal automation adopted across multiple teams">内部自动化工具跨团队落地</dd>
+        </div>
+      </dl>
+
+      <div class="work-principles" data-reveal>
+        <p data-en="No rebuild for rebuild's sake.">不为了重构而重构。</p>
+        <p data-en="I do not use AI as universal glue.">不拿 AI 当万能胶。</p>
+        <p data-en="No hiding risk until launch day.">不让风险到上线前才暴露。</p>
+      </div>
+    </section>
+
+    <section class="work-cta page-container" aria-labelledby="work-cta-title" data-reveal>
+      <div>
+        <h2 id="work-cta-title" data-en="Stop letting firefighting become the project’s normal state.">别再让项目一边救火，一边继续失控。</h2>
+        <p data-en="Send a repository link you are able to share, an error screenshot, a short description, or simply tell me what is blocked. We will first decide whether to patch, refactor, or start over with a smaller scope.">把可以分享的仓库链接、报错截图、现状说明，或一句“现在最卡的是什么”发给我。我们先一起判断：该修、该重构，还是该缩小范围重新开始。</p>
+      </div>
+      <div class="work-cta__action">
+        <button class="work-button work-button--primary" type="button" data-contact-open data-en="Tell me where it’s stuck">说说项目卡在哪</button>
+        <p data-en="No complete PRD required. A clear description of the current situation is enough to begin.">不需要先整理完整 PRD，能说明现状，就可以开始。</p>
       </div>
     </section>
   </main>
+
   <site-footer></site-footer>
   <contact-modal></contact-modal>
 </body>

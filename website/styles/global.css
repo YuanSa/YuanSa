@@ -649,6 +649,10 @@ contact-modal {
   transform: translateY(-2px);
 }
 
+.miniature-project + .miniature-project {
+  margin-top: 16px;
+}
+
 .miniature-project:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
@@ -677,6 +681,19 @@ contact-modal {
   font-family: var(--font-ui);
   font-size: 0.9rem;
   white-space: nowrap;
+}
+
+.miniature-project--app {
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.miniature-project__icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(68, 54, 38, 0.14);
 }
 
 .collection-grid {
@@ -1333,6 +1350,20 @@ contact-modal {
     gap: 26px;
     align-items: start;
     padding: 22px 18px;
+  }
+
+  .miniature-project--app {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  .miniature-project__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+
+  .miniature-project--app .miniature-project__link {
+    grid-column: 2;
   }
 
   .collection-card {

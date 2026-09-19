@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-title-zh="淘气爪爪 | 杨子涵" data-title-en="Mischievous Paws | YANG Zihan">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="淘气爪爪是一款跟随鼠标、在点击时拍下来的 macOS 趣味菜单栏 App。" />
+  <title>淘气爪爪 | 杨子涵</title>
+  <link rel="icon" href="/assets/projects/taoqizhuazhua/app-icon.png" />
+  <link rel="stylesheet" href="/styles/tokens.css" />
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="stylesheet" href="/styles/taoqizhuazhua.css" />
+  <script type="module" src="/components/site-header.js"></script>
+  <script type="module" src="/components/site-footer.js"></script>
+  <script type="module" src="/components/contact-modal.js"></script>
+</head>
+<body>
+  <site-header current="projects"></site-header>
+  <main class="paw-page">
+    <section class="paw-hero page-container" aria-labelledby="paw-title">
+      <div>
+        <a class="paw-back" href="/projects/" data-en="Back to projects">返回个人项目</a>
+        <h1 id="paw-title" data-en="Mischievous Paws">淘气爪爪</h1>
+        <p class="paw-summary" data-en="A cat paw follows your pointer from the screen edge, then swings down whenever you click.">一只猫爪从屏幕边缘探出来，跟随鼠标移动，并在点击时轻轻拍下。</p>
+        <nav class="paw-actions" aria-label="产品相关页面" data-en-aria-label="Product links">
+          <a href="/projects/taoqizhuazhua/support/" data-en="Technical support">技术支持</a>
+          <a href="/projects/taoqizhuazhua/privacy/" data-en="Privacy policy">隐私政策</a>
+        </nav>
+      </div>
+      <div class="paw-hero__visual" aria-hidden="true">
+        <img class="paw-app-icon" src="/assets/projects/taoqizhuazhua/app-icon.png" width="1024" height="1024" alt="" />
+      </div>
+    </section>
+
+    <section class="paw-features page-container" aria-label="产品功能" data-en-aria-label="Features">
+      <article class="paw-feature">
+        <h2 data-en="Follows every move">一路跟随</h2>
+        <p data-en="The translucent paw shadow follows your pointer across multiple displays and reaches out naturally from your chosen screen edge or corner.">半透明爪影会跨显示器跟随指针，并从你选定的屏幕边缘或角落自然伸出。</p>
+      </article>
+      <article class="paw-feature">
+        <h2 data-en="Pats when you click">点击就拍</h2>
+        <p data-en="Click and the whole paw swings down. Choose a quick tap or keep it pressed until you release the mouse.">点击鼠标时整只爪爪会旋转拍下，可以选择轻拍即走，也可以死死按住。</p>
+      </article>
+      <article class="paw-feature">
+        <h2 data-en="Make it your paw">随你定制</h2>
+        <p data-en="Adjust fur color, shadow opacity, speed, paw direction, and launch position. Settings can also be imported and exported.">调整爪色、阴影不透明度、速度、左右爪与伸出位置，还可以导入和导出配置。</p>
+      </article>
+    </section>
+
+    <nav class="paw-links page-container" aria-label="帮助与法律信息" data-en-aria-label="Help and legal">
+      <a href="/projects/taoqizhuazhua/support/">
+        <strong data-en="Technical support">技术支持</strong>
+        <span data-en="Get help →">获取帮助 →</span>
+      </a>
+      <a href="/projects/taoqizhuazhua/privacy/">
+        <strong data-en="Privacy policy">隐私政策</strong>
+        <span data-en="Read policy →">阅读政策 →</span>
+      </a>
+    </nav>
+  </main>
+  <site-footer></site-footer>
+  <contact-modal></contact-modal>
+</body>
+</html>

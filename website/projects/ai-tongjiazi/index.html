@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-title-zh="AI 通假字 | 杨子涵" data-title-en="AI Tongjiazi | YANG Zihan">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="把中文歌词中的多音字替换为对应读音的单音字，并转为繁体，减少 AI 音乐生成时的误读。" />
+  <title>AI 通假字 | 杨子涵</title>
+  <link rel="stylesheet" href="/styles/tokens.css" />
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="stylesheet" href="/styles/ai-tongjiazi.css" />
+  <script type="module" src="/components/site-header.js"></script>
+  <script type="module" src="/components/site-footer.js"></script>
+  <script type="module" src="/components/contact-modal.js"></script>
+  <script type="module" src="/components/ai-tongjiazi.js"></script>
+</head>
+<body>
+  <site-header current="projects"></site-header>
+
+  <main class="tongjia-page">
+    <header class="tongjia-intro page-container">
+      <a class="tongjia-back" href="/projects/" data-en="Back to projects">返回个人项目</a>
+      <div class="tongjia-intro__grid">
+        <div>
+          <p class="tongjia-kicker" data-en="Lyrics pronunciation tool">歌词校音工具</p>
+          <h1>AI 通假字</h1>
+        </div>
+        <p class="tongjia-intro__summary" data-en="Replace polyphonic characters with stable homophones, then convert lyrics to Traditional Chinese, so AI music generators sing the intended pronunciation.">把多音字换成读音稳定的同音字，再将歌词转成繁体，减少 AI 音乐生成时的误读。</p>
+      </div>
+    </header>
+
+    <section class="tongjia-workbench page-container" aria-labelledby="workbench-title">
+      <h2 id="workbench-title" class="visually-hidden">歌词转换器</h2>
+
+      <div class="tongjia-options" aria-label="转换选项" data-en-aria-label="Conversion options">
+        <label class="tongjia-option">
+          <input id="replace-polyphones" type="checkbox" checked />
+          <span data-en="Fix polyphonic characters">校正多音字</span>
+        </label>
+        <label class="tongjia-option">
+          <input id="convert-traditional" type="checkbox" checked />
+          <span data-en="Convert to Traditional Chinese">转换为繁体</span>
+        </label>
+        <div class="tongjia-ai-state" id="ai-state" role="status" aria-live="polite">正在检测 Chrome AI</div>
+      </div>
+
+      <div class="tongjia-editor">
+        <section class="tongjia-panel" aria-labelledby="source-label">
+          <div class="tongjia-panel__head">
+            <label id="source-label" for="source-lyrics" data-en="Original lyrics">原始歌词</label>
+            <button id="load-example" class="tongjia-text-button" type="button" data-en="Use example">填入示例</button>
+          </div>
+          <textarea id="source-lyrics" spellcheck="false" maxlength="6000" placeholder="粘贴一段中文歌词……" data-en-placeholder="Paste Chinese lyrics here..."></textarea>
+          <div class="tongjia-panel__foot">
+            <span id="source-count">0 / 6000</span>
+            <button id="clear-source" class="tongjia-text-button" type="button" data-en="Clear">清空</button>
+          </div>
+        </section>
+
+        <div class="tongjia-convert">
+          <button id="convert-button" type="button">
+            <span data-label data-en="Convert lyrics">转换歌词</span>
+          </button>
+          <span class="tongjia-convert__hint" data-en="Runs locally in Chrome">在 Chrome 本地处理</span>
+        </div>
+
+        <section class="tongjia-panel tongjia-panel--result" aria-labelledby="result-label">
+          <div class="tongjia-panel__head">
+            <label id="result-label" for="result-lyrics" data-en="AIGC-ready lyrics">AIGC 歌词</label>
+            <button id="copy-result" class="tongjia-text-button" type="button" disabled data-en="Copy result">复制结果</button>
+          </div>
+          <textarea id="result-lyrics" readonly placeholder="转换后的歌词会出现在这里" data-en-placeholder="Converted lyrics will appear here"></textarea>
+          <div class="tongjia-panel__foot tongjia-panel__foot--result">
+            <span id="result-summary" aria-live="polite" data-en="Waiting for lyrics">等待输入歌词</span>
+          </div>
+        </section>
+      </div>
+
+      <div id="message" class="tongjia-message" role="alert" hidden></div>
+      <div id="change-log" class="tongjia-changes" hidden>
+        <h3 data-en="Pronunciation changes">读音替换</h3>
+        <div id="change-list" class="tongjia-changes__list"></div>
+      </div>
+    </section>
+
+    <aside class="tongjia-note page-container" aria-labelledby="note-title">
+      <h2 id="note-title" data-en="Before you generate">生成前请留意</h2>
+      <div>
+        <p data-en="Read the result once. Lyrics, names and dialect expressions may still need manual adjustment.">请通读一次结果。人名、方言和特殊押韵仍可能需要手动调整。</p>
+        <p data-en="Chrome built-in AI runs on your device. This page does not upload or store your lyrics.">Chrome 内置 AI 在设备本地运行，本页面不会上传或保存歌词。</p>
+      </div>
+    </aside>
+  </main>
+
+  <site-footer></site-footer>
+  <contact-modal></contact-modal>
+</body>
+</html>

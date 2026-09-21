@@ -14,7 +14,6 @@
 .paw-back,
 .paw-kicker,
 .paw-summary,
-.paw-actions,
 .paw-feature p,
 .paw-links,
 .paw-document {
@@ -51,14 +50,46 @@
   line-height: 1.85;
 }
 
-.paw-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 22px;
+.paw-download {
+  display: block;
+  width: fit-content;
   margin-top: 34px;
+  line-height: 0;
+  transition: opacity 220ms var(--ease), transform 220ms var(--ease);
 }
 
-.paw-actions a,
+.paw-download:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.paw-download:active {
+  transform: translateY(-1px);
+}
+
+.paw-download:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.paw-download__badge {
+  display: block;
+  width: auto;
+  height: 46px;
+}
+
+.paw-download__badge--en {
+  display: none;
+}
+
+html[lang="en"] .paw-download__badge--zh {
+  display: none;
+}
+
+html[lang="en"] .paw-download__badge--en {
+  display: block;
+}
+
 .paw-links a {
   color: var(--color-ink);
   text-underline-offset: 6px;
@@ -266,6 +297,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .paw-download,
   .paw-links a,
   .miniature-project {
     transition: none;

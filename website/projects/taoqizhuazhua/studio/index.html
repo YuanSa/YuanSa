@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-title-zh="制作我的猫爪 | 淘气爪爪" data-title-en="Skin studio | PawPawPaw!">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="上传透明猫爪图片，制作可导入淘气爪爪 App 的专属 .paw 皮肤。" />
+  <title>制作我的猫爪 | 淘气爪爪</title>
+  <link rel="icon" href="/assets/projects/taoqizhuazhua/app-icon.png" />
+  <link rel="stylesheet" href="/styles/taoqizhuazhua.css?v=20261017.4" />
+  <script type="module" src="/components/paw-site.js?v=20261017.4"></script>
+  <script type="module" src="/components/paw-studio.js?v=20261017.4"></script>
+</head>
+<body class="paw-studio-page">
+  <a class="paw-skip" href="#main" data-en="Skip to content">跳到正文</a>
+  <paw-site-header hide-create-link></paw-site-header>
+  <main id="main" class="paw-studio-main paw-container">
+    <h1 class="paw-studio-title"><span id="name-step-heading" data-en="Name your paw">给你的猫爪起个名</span><span id="working-title" hidden><span data-en="Make my ">制作我的</span><button class="paw-name-link" id="edit-skin-name" type="button" title="修改名字"></button><span data-en=" paw">爪爪</span></span></h1>
+    <form id="name-step" class="paw-name-step">
+      <div class="paw-field"><input id="initial-skin-name" aria-label="猫爪名字" data-en-aria-label="Paw name" name="skinName" type="text" maxlength="40" required autocomplete="off" placeholder="例如：暹罗" data-en-placeholder="e.g. Siamese" /></div>
+      <button class="paw-button paw-button--primary" type="submit" data-en="Continue">继续</button>
+    </form>
+    <div id="upload-step" class="paw-upload-step" hidden>
+      <div class="paw-upload" id="upload-zone">
+        <label for="skin-file"><span class="paw-upload__plus" aria-hidden="true">＋</span><strong data-en="Choose or drop a paw image">选择或拖入猫爪图片</strong></label>
+        <input id="skin-file" name="texture" type="file" accept="image/png,.png" aria-describedby="skin-file-help upload-status" />
+      </div>
+      <p class="paw-upload-help" id="skin-file-help" data-en-html="A PNG with a transparent background. Toes up, foreleg down.<br>Square images work best. Up to 10 MB and 4096 px per side.">透明背景的 PNG，爪尖朝上、前腿朝下。<br>推荐正方形，不超过 10 MB，单边不超过 4096 像素。</p>
+      <p class="paw-form-status" id="upload-status" role="status" aria-live="polite" hidden></p>
+      <details class="paw-prompt">
+        <summary data-en="Create a paw image with AI">用 AI 生成猫爪图片</summary>
+        <div class="paw-prompt__body">
+        <pre id="paw-prompt-text">为鼠标猫爪特效生成一张写实的猫咪前爪与前腿纹理。
+输出 1024 × 1024 正方形 PNG，使用真实 alpha 透明通道。
+俯视猫爪背面，爪尖朝上，前腿朝下，主体居中。
+猫爪完整位于画面上半部分，前腿沿下半部分延伸到底边。
+前腿宽度自然均匀，下半部分毛色和光照一致，便于重复延伸。
+保留柔软绒毛边缘，左右留出透明空间，柔和均匀光照。
+无投影、文字、水印或其他身体部位，不要画出透明棋盘格。</pre>
+        <div class="paw-prompt__actions"><button class="paw-text-link" id="copy-prompt" type="button" data-en="Copy prompt">复制提示词</button><a class="paw-text-link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" data-en="Open ChatGPT ↗">打开 ChatGPT 生图 ↗</a></div>
+        <p id="copy-status" role="status" aria-live="polite" hidden></p></div>
+      </details>
+    </div>
+    <div class="paw-workbench" id="editor-step" hidden>
+      <div class="paw-studio__preview" aria-label="皮肤预览" data-en-aria-label="Skin preview">
+        <img id="skin-image" width="512" height="512" alt="" hidden />
+        <canvas id="skin-preview-canvas" role="img" aria-label="猫爪从桌面边缘伸出的预览" data-en-aria-label="Preview of your paw reaching in from the desktop edge"></canvas>
+        <button class="paw-clear" id="clear-skin" type="button" aria-label="清空图片" data-en-aria-label="Clear image">×</button>
+      </div>
+      <form class="paw-skin-form" id="skin-form">
+        <div class="paw-field"><label for="skin-name" data-en="Paw name">猫爪名字</label><input id="skin-name" name="name" type="text" maxlength="40" required placeholder="例如：我家的小橘" data-en-placeholder="e.g. My little ginger" /></div>
+        <div class="paw-field"><label for="skin-author" data-en="Author (optional)">作者（选填）</label><input id="skin-author" name="author" type="text" maxlength="80" /></div>
+        <div class="paw-field"><label for="skin-story" data-en="Story (optional)">猫咪的故事（选填）</label><textarea id="skin-story" name="story" rows="3" maxlength="2000"></textarea></div>
+        <div class="paw-field"><label for="skin-contact" data-en="Author website (optional)">作者主页（选填）</label><input id="skin-contact" name="contact" type="url" placeholder="https://" maxlength="2048" /></div>
+        <p class="paw-form-status" id="skin-status" role="status" aria-live="polite" hidden></p>
+        <button class="paw-button paw-button--primary" id="export-skin" type="submit" data-en="Generate skin">生成皮肤</button>
+      </form>
+    </div>
+  </main>
+  <dialog class="paw-import-dialog" id="import-dialog" aria-labelledby="import-title" aria-describedby="import-description">
+    <button class="paw-dialog-close" id="close-import" type="button" aria-label="关闭" data-en-aria-label="Close">×</button>
+    <img src="/assets/projects/taoqizhuazhua/app-icon.png" width="56" height="56" alt="" />
+    <h2 id="import-title" data-en="Your paw is ready">皮肤已生成</h2>
+    <p id="import-description" data-en="After the .paw file downloads, open PawPawPaw! → Settings → Breeds. Click Import and choose the file you just generated.">下载 .paw 文件后，打开淘气爪爪 App 的「设置」窗口，在「品种」中点击「导入」，选择刚刚生成的文件。</p>
+    <button class="paw-button paw-button--primary" id="confirm-import" type="button" data-en="Got it">知道了</button>
+  </dialog>
+  <dialog class="paw-import-dialog" id="upload-error-dialog" aria-labelledby="upload-error-title" aria-describedby="upload-error-description">
+    <button class="paw-dialog-close" id="close-upload-error" type="button" aria-label="关闭" data-en-aria-label="Close">×</button>
+    <h2 id="upload-error-title" data-en="Unable to upload image">图片上传失败</h2>
+    <p id="upload-error-description"></p>
+    <button class="paw-button paw-button--primary" id="dismiss-upload-error" type="button" data-en="Got it">知道了</button>
+  </dialog>
+  <noscript><p class="paw-container">制作皮肤需要启用 JavaScript。</p></noscript>
+</body>
+</html>

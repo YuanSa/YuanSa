@@ -1,62 +1,117 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-title-zh="淘气爪爪 | 杨子涵" data-title-en="Mischievous Paws | YANG Zihan">
+<html lang="zh-CN" data-title-zh="淘气爪爪 | 给鼠标一点猫的陪伴" data-title-en="Mischievous Paws | A little company for your cursor">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="淘气爪爪是一款跟随鼠标、在点击时拍下来的 macOS 趣味菜单栏 App。" />
-  <title>淘气爪爪 | 杨子涵</title>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="淘气爪爪是一款跟随鼠标、在点击时拍下来的 macOS 趣味菜单栏 App。体验真实猫爪，制作专属皮肤，让工作多一点陪伴。" />
+  <title>淘气爪爪 | 给鼠标一点猫的陪伴</title>
   <link rel="icon" href="/assets/projects/taoqizhuazhua/app-icon.png" />
-  <link rel="stylesheet" href="/styles/tokens.css" />
-  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="preload" as="image" href="/assets/projects/taoqizhuazhua/coats/tabby.png" />
   <link rel="stylesheet" href="/styles/taoqizhuazhua.css" />
-  <script type="module" src="/components/site-header.js"></script>
-  <script type="module" src="/components/site-footer.js"></script>
-  <script type="module" src="/components/contact-modal.js"></script>
+  <script type="module" src="/components/paw-site.js"></script>
+  <script type="module" src="/components/paw-product.js"></script>
 </head>
 <body>
-  <site-header current="projects"></site-header>
-  <main class="paw-page">
-    <section class="paw-hero page-container" aria-labelledby="paw-title">
-      <div>
-        <h1 id="paw-title" data-en="Mischievous Paws">淘气爪爪</h1>
-        <p class="paw-summary" data-en="A cat paw follows your pointer from the screen edge, then swings down whenever you click.">一只猫爪从屏幕边缘探出来，跟随鼠标移动，并在点击时轻轻拍下。</p>
-        <a class="paw-download" href="https://apps.apple.com/cn/app/%E6%B7%98%E6%B0%94%E7%88%AA%E7%88%AA/id6813785742?mt=12" target="_blank" rel="noreferrer">
-          <img class="paw-download__badge paw-download__badge--zh" src="/assets/projects/taoqizhuazhua/download-on-mac-app-store-zh-cn.svg" width="140" height="40" alt="在 Mac App Store 下载淘气爪爪" />
-          <img class="paw-download__badge paw-download__badge--en" src="/assets/projects/taoqizhuazhua/download-on-mac-app-store-en-us.svg" width="156" height="40" alt="Download Mischievous Paws on the Mac App Store" />
-        </a>
+  <a class="paw-skip" href="#main" data-en="Skip to content">跳到正文</a>
+  <paw-site-header></paw-site-header>
+  <main id="main" class="paw-page">
+    <section class="paw-hero paw-container" id="experience" aria-labelledby="paw-title">
+      <div class="paw-hero__copy">
+        <p class="paw-kicker" data-en="A tiny companion for your Mac">住在 Mac 里的小小陪伴</p>
+        <h1 id="paw-title" data-en-html="Serious work.<br>Playful paws.">工作可以认真，<br>鼠标可以淘气。</h1>
+        <p class="paw-summary" data-en="A furry paw follows your cursor and pats when you click. A little company, all day long.">一只毛茸茸的猫爪，跟着鼠标探出头。<br class="paw-desktop-break">点一下，它也轻轻拍一下。</p>
+        <div class="paw-actions">
+          <a class="paw-download" href="https://apps.apple.com/cn/app/%E6%B7%98%E6%B0%94%E7%88%AA%E7%88%AA/id6813785742?mt=12" target="_blank" rel="noopener noreferrer">
+            <img class="paw-download__badge paw-download__badge--zh" src="/assets/projects/taoqizhuazhua/download-on-mac-app-store-zh-cn.svg" width="140" height="40" alt="在 Mac App Store 下载淘气爪爪" />
+            <img class="paw-download__badge paw-download__badge--en" src="/assets/projects/taoqizhuazhua/download-on-mac-app-store-en-us.svg" width="156" height="40" alt="Download Mischievous Paws on the Mac App Store" />
+          </a>
+          <a class="paw-text-link" href="#studio" data-en="Make your own paw ↗">制作我的猫爪 ↗</a>
+        </div>
       </div>
-      <div class="paw-hero__visual" aria-hidden="true">
-        <img class="paw-app-icon" src="/assets/projects/taoqizhuazhua/app-icon.png" width="1024" height="1024" alt="" />
+      <div class="paw-playground">
+        <button class="paw-stage" id="paw-stage" type="button" aria-label="互动预览：移动鼠标或点击，猫爪会跟随并轻拍" data-en-aria-label="Interactive preview: move your cursor or click to make the paw follow and pat">
+          <span class="paw-stage__hello" data-en-html="Oh, hello<br>little human.">今天，<br>也陪着你。</span>
+          <span class="paw-stage__target" aria-hidden="true">↖</span>
+          <span class="paw-stage__arm" aria-hidden="true"><img id="demo-paw" src="/assets/projects/taoqizhuazhua/coats/tabby.png" width="1254" height="1254" alt="" fetchpriority="high" /></span>
+        </button>
+        <div class="paw-playground__bottom">
+          <span class="paw-stage-hint" data-en="Move around. Give it a click.">动动鼠标，试着点一下</span>
+          <div class="paw-coats" role="group" aria-label="预览猫爪品种" data-en-aria-label="Preview paw coats">
+            <button class="paw-coat" type="button" data-coat="tabby" aria-pressed="true" aria-label="狸花" data-en-aria-label="Tabby"><img src="/assets/projects/taoqizhuazhua/coats/tabby.png" width="48" height="48" alt="" /></button>
+            <button class="paw-coat" type="button" data-coat="calico" aria-pressed="false" aria-label="三花" data-en-aria-label="Calico"><img src="/assets/projects/taoqizhuazhua/coats/calico.png" width="48" height="48" alt="" loading="lazy" /></button>
+            <button class="paw-coat" type="button" data-coat="black" aria-pressed="false" aria-label="黑猫" data-en-aria-label="Black cat"><img src="/assets/projects/taoqizhuazhua/coats/black.png" width="48" height="48" alt="" loading="lazy" /></button>
+            <button class="paw-coat" type="button" data-coat="maine-coon" aria-pressed="false" aria-label="缅因" data-en-aria-label="Maine Coon"><img src="/assets/projects/taoqizhuazhua/coats/maine-coon.png" width="48" height="48" alt="" loading="lazy" /></button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="paw-features page-container" aria-label="产品功能" data-en-aria-label="Features">
-      <article class="paw-feature">
-        <h2 data-en="Follows every move">一路跟随</h2>
-        <p data-en="The translucent paw shadow follows your pointer across multiple displays and reaches out naturally from your chosen screen edge or corner.">半透明爪影会跨显示器跟随指针，并从你选定的屏幕边缘或角落自然伸出。</p>
-      </article>
-      <article class="paw-feature">
-        <h2 data-en="Pats when you click">点击就拍</h2>
-        <p data-en="Click and the whole paw swings down. Choose a quick tap or keep it pressed until you release the mouse.">点击鼠标时整只爪爪会旋转拍下，可以选择轻拍即走，也可以死死按住。</p>
-      </article>
-      <article class="paw-feature">
-        <h2 data-en="Make it your paw">随你定制</h2>
-        <p data-en="Adjust fur color, shadow opacity, speed, paw direction, and launch position. Settings can also be imported and exported.">调整爪色、阴影不透明度、速度、左右爪与伸出位置，还可以导入和导出配置。</p>
-      </article>
+    <section class="paw-personality paw-container" aria-labelledby="personality-title">
+      <div class="paw-personality__intro">
+        <h2 id="personality-title" data-en-html="A little company.<br>Just enough.">一点小陪伴，<br>刚刚好。</h2>
+        <p data-en="A small menu bar app with a soft spot for your everyday moments.">安静待在菜单栏，<br>把平常的每一次点击，变得有趣一点。</p>
+        <div class="paw-friends" aria-hidden="true">
+          <img src="/assets/projects/taoqizhuazhua/coats/calico.png" width="200" height="200" alt="" loading="lazy" />
+          <img src="/assets/projects/taoqizhuazhua/coats/black.png" width="200" height="200" alt="" loading="lazy" />
+        </div>
+      </div>
+      <div class="paw-features">
+        <article class="paw-feature"><span class="paw-feature__symbol" aria-hidden="true">↗</span><div><h3 data-en="Where you go, it follows">鼠标去哪，它就去哪</h3><p data-en="Across multiple displays, from your chosen screen edge or corner. Always within paw's reach.">跨显示器跟随指针，从你选定的屏幕边缘或角落，自然探出爪爪。</p></div></article>
+        <article class="paw-feature"><span class="paw-feature__symbol" aria-hidden="true">↙</span><div><h3 data-en="Every click gets a little pat">每一次点击，都有回应</h3><p data-en="A quick tap or a stubborn press. Set the direction, speed, and shadow just the way you like.">轻拍即走，也能死死按住。左右爪、速度、阴影和伸出位置，都由你决定。</p></div></article>
+        <article class="paw-feature"><span class="paw-feature__symbol" aria-hidden="true">☾</span><div><h3 data-en="Needs a break? Let it nap.">忙的时候，让它睡一会儿</h3><p data-en="Hide for 30, 60, or 120 minutes, until tomorrow, or until you bring it back.">隐藏 30、60、120 分钟，直到明天，或等你手动恢复。需要专注时，随时收起。</p></div></article>
+      </div>
     </section>
 
-    <nav class="paw-links page-container" aria-label="帮助与法律信息" data-en-aria-label="Help and legal">
-      <a href="/projects/taoqizhuazhua/support/">
-        <strong data-en="Technical support">技术支持</strong>
-        <span data-en="Get help →">获取帮助 →</span>
-      </a>
-      <a href="/projects/taoqizhuazhua/privacy/">
-        <strong data-en="Privacy policy">隐私政策</strong>
-        <span data-en="Read policy →">阅读政策 →</span>
-      </a>
-    </nav>
+    <section class="paw-studio paw-container" id="studio" aria-labelledby="studio-title">
+      <header class="paw-section-heading">
+        <p class="paw-kicker" data-en="Made by you">这一次，换你来创造</p>
+        <h2 id="studio-title" data-en="Your cat. Your paw.">把你的猫，带到屏幕上。</h2>
+        <p data-en="Bring a transparent PNG. Give it a name. Take home a skin made by you.">准备一张透明 PNG，起个名字，带走你的专属猫爪皮肤。</p>
+      </header>
+      <div class="paw-workbench">
+        <div class="paw-studio__visual">
+          <div class="paw-studio__preview" id="skin-preview" aria-label="皮肤预览" data-en-aria-label="Skin preview">
+            <img id="skin-image" src="/assets/projects/taoqizhuazhua/coats/tabby.png" width="512" height="512" alt="猫爪纹理预览" data-en-alt="Paw texture preview" loading="lazy" />
+          </div>
+          <div class="paw-studio__caption"><strong id="skin-caption" data-en="Your paw goes here">你的猫爪，会出现在这里</strong><span data-en="Tip up. Leg down. Transparent background.">爪尖朝上，前腿朝下，背景透明</span></div>
+          <button class="paw-text-link" id="use-sample" type="button" data-en="Try with the current preview paw ↗">没有素材？先用当前预览的猫爪试试 ↗</button>
+        </div>
+        <form class="paw-skin-form" id="skin-form">
+          <div class="paw-upload" id="upload-zone">
+            <label for="skin-file"><span class="paw-upload__plus" aria-hidden="true">＋</span><strong data-en="Choose or drop a paw image">选择或拖入猫爪图片</strong><span data-en="Transparent PNG, up to 10 MB">带透明通道的 PNG，不超过 10 MB</span></label>
+            <input id="skin-file" name="texture" type="file" accept="image/png,.png" aria-describedby="skin-file-help skin-status" />
+          </div>
+          <p class="paw-field-note" id="skin-file-help" data-en="Up to 4096 px per side. Square images work best; exported at 512 × 512.">长宽不超过 4096 像素，推荐正方形。导出时等比例放入 512 × 512 画布。</p>
+          <div class="paw-field"><label for="skin-name" data-en="Name your paw">给猫爪起个名字</label><input id="skin-name" name="name" type="text" maxlength="40" required placeholder="例如：我家的小橘" data-en-placeholder="e.g. My little ginger" /></div>
+          <details class="paw-about-fields"><summary data-en="Add an author and a little story (optional)">留下作者和一点故事（选填）</summary><div class="paw-field"><label for="skin-author" data-en="Author">作者</label><input id="skin-author" name="author" type="text" maxlength="80" /></div><div class="paw-field"><label for="skin-story" data-en="Your cat's story">猫咪的故事</label><textarea id="skin-story" name="story" rows="3" maxlength="2000"></textarea></div><div class="paw-field"><label for="skin-contact" data-en="Author website">作者主页</label><input id="skin-contact" name="contact" type="url" placeholder="https://" maxlength="2048" /><span class="paw-field-note" data-en="An http:// or https:// website address.">支持 http:// 或 https:// 网页地址。</span></div></details>
+          <p class="paw-form-status" id="skin-status" role="status" aria-live="polite"></p>
+          <button class="paw-button paw-button--primary" id="export-skin" type="submit" data-en="Download my .paw skin ↓">下载我的 .paw 皮肤 ↓</button>
+          <p class="paw-local-note" data-en="Everything happens in your browser. Your image is never uploaded.">图片处理与打包都在浏览器本地完成，不会上传。</p>
+        </form>
+      </div>
+      <div class="paw-studio-help">
+        <div><h3 data-en="Made it? Let it settle in.">做好了，就让它住进来。</h3><p data-en="On your Mac, open the .paw file with Mischievous Paws, or import it in Settings → Breeds.">在 Mac 上用淘气爪爪打开下载的 .paw 文件，<br>或在 App「设置 → 品种」中导入。</p></div>
+        <details class="paw-prompt"><summary data-en="Need a prompt for an AI image tool?">想用 AI 画猫爪？这里有参考提示词</summary><p data-en="Replace [Ragdoll] with your cat's breed or coat. Generate the image in your preferred image tool, then return here to package it.">将【布偶猫】换成你想要的品种或毛色，在你常用的生图工具中生成，再回到这里打包。</p><pre id="paw-prompt-text">为鼠标猫爪特效生成一张写实的【布偶猫】前爪与前腿纹理。
+输出 1024 × 1024 正方形 PNG，使用真实 alpha 透明通道。
+俯视猫爪背面，爪尖朝上，前腿朝下，主体居中。
+猫爪完整位于画面上半部分，前腿沿下半部分延伸到底边。
+前腿宽度自然均匀，下半部分毛色和光照一致，便于重复延伸。
+保留柔软绒毛边缘，左右留出透明空间，柔和均匀光照。
+无投影、文字、水印或其他身体部位，不要画出透明棋盘格。</pre><button class="paw-text-link" id="copy-prompt" type="button" data-en="Copy prompt">复制提示词</button><p id="copy-status" role="status" aria-live="polite"></p></details>
+      </div>
+    </section>
+
+    <section class="paw-questions paw-container" aria-labelledby="questions-title">
+      <h2 id="questions-title" data-en="A few things to know.">再了解一点点。</h2>
+      <div class="paw-faqs">
+        <details><summary data-en="Will it collect my data?">会收集我的数据吗？</summary><p data-en-html="The app requires no account and has no ads or tracking SDKs. Pointer and click information is processed locally in real time. Read the full <a href='/projects/taoqizhuazhua/privacy/'>privacy policy</a>.">App 无需账号，不含广告或追踪 SDK。指针与点击信息只在设备本地实时处理。你可以阅读完整的<a href="/projects/taoqizhuazhua/privacy/">隐私政策</a>。</p></details>
+        <details><summary data-en="How do I create a custom paw?">怎样制作自己的猫爪？</summary><p data-en="Use a transparent PNG of a paw, tip pointing up and leg down. Upload it in the studio above, add a name, and download the .paw file. A regular cat photo needs to be prepared as a transparent paw texture first.">准备爪尖朝上、前腿朝下的透明 PNG，在上方制作工具中选择图片、填写名称并下载 .paw 文件。普通猫咪照片需要先处理成透明猫爪纹理。</p></details>
+        <details><summary data-en="Where can I get help?">遇到问题，可以找谁？</summary><p data-en-html="Visit <a href='/projects/taoqizhuazhua/support/'>technical support</a>, or email <a href='mailto:taoqizhuazhua@yangzihan.org'>taoqizhuazhua@yangzihan.org</a>. Include your macOS version, app version, and a description of the issue.">请前往<a href="/projects/taoqizhuazhua/support/">技术支持</a>页面，或发送邮件至 <a href="mailto:taoqizhuazhua@yangzihan.org">taoqizhuazhua@yangzihan.org</a>。附上 macOS 版本、App 版本与问题描述，方便更快定位。</p></details>
+      </div>
+    </section>
   </main>
-  <site-footer></site-footer>
-  <contact-modal></contact-modal>
+  <paw-site-footer></paw-site-footer>
+  <noscript><p class="paw-container">皮肤制作与互动预览需要启用 JavaScript；下载、隐私政策和技术支持链接仍可正常访问。</p></noscript>
 </body>
 </html>

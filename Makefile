@@ -18,7 +18,7 @@ AWS_DEFAULT_REGION := auto
 PERSONAL_WEBSITE_R2_ENDPOINT := https://$(PERSONAL_WEBSITE_CLOUDFLARE_ACCOUNT_ID).r2.cloudflarestorage.com
 PERSONAL_WEBSITE_R2_DEST := s3://$(PERSONAL_WEBSITE_R2_BUCKET)
 
-.PHONY: deploy-website check-deploy-website
+.PHONY: deploy-website check-deploy-website sync-lyricue
 
 dev:
 	cd website && python3 -m http.server 4173
@@ -36,3 +36,6 @@ check-deploy-website:
 	@test -n "$(PERSONAL_WEBSITE_R2_BUCKET)" || (echo "Missing PERSONAL_WEBSITE_R2_BUCKET in $(ENV_FILE)"; exit 1)
 	@test -n "$(PERSONAL_WEBSITE_R2_ACCESS_KEY_ID)" || (echo "Missing PERSONAL_WEBSITE_R2_ACCESS_KEY_ID in $(ENV_FILE)"; exit 1)
 	@test -n "$(PERSONAL_WEBSITE_R2_SECRET_ACCESS_KEY)" || (echo "Missing PERSONAL_WEBSITE_R2_SECRET_ACCESS_KEY in $(ENV_FILE)"; exit 1)
+
+sync-lyricue:
+	node scripts/sync-lyricue.mjs
